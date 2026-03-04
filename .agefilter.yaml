@@ -1,0 +1,14 @@
+version: 1
+
+defaults:
+  armored: true
+  max_file_size: 10485760
+  on_missing_identity: fail
+
+identities:
+  - ./example/.age-demo/keys.txt
+
+rules:
+  - path: "example/secrets/*.env"
+    recipients: ["age1syevz8hvvs2mntjj4fd4ckkf8hgy3c2tltc4vnsr3ql5fueh33msf9fmmt"]
+    required: true
