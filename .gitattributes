@@ -1,1 +1,1 @@
-secrets/*.env filter=age diff=age merge=binary -text
+example/secrets/*.env filter=age diff=age merge=binary -text
