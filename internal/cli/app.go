@@ -11,8 +11,11 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/rbo13/git-age-filter/internal/crypto"
 	"github.com/rbo13/git-age-filter/internal/exitcode"
+	"github.com/rbo13/git-age-filter/internal/filter"
 	"github.com/rbo13/git-age-filter/internal/git"
+	"github.com/rbo13/git-age-filter/internal/policy"
 	"github.com/rbo13/git-age-filter/internal/version"
 )
 
