@@ -32,7 +32,7 @@ func TestEnsureAttributesIdempotent(t *testing.T) {
 	t.Parallel()
 
 	repo := initTempRepo(t)
-	client := NewClient(repo)
+	client := git.NewClient(repo)
 
 	patterns := []string{"secrets/*.env", "infra/prod/*.yaml"}
 	if err := client.EnsureAttributes(context.Background(), patterns); err != nil {
@@ -60,10 +60,10 @@ func TestConfigureFilterOutsideGitRepository(t *testing.T) {
 	t.Parallel()
 
 	dir := t.TempDir()
-	client := NewClient(dir)
+	client := git.NewClient(dir)
 
 	err := client.ConfigureFilter(context.Background(), "git-age-filter")
-	if !errors.Is(err, ErrNotGitRepository) {
+	if !errors.Is(err, git.ErrNotGitRepository) {
 		t.Fatalf("ConfigureFilter() error = %v; want ErrNotGitRepository", err)
 	}
 }
